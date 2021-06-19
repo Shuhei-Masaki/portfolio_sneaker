@@ -1,0 +1,269 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+body {
+  font-size: 1rem;
+  font-family: 'Benne', serif;
+}
+img {
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 50px 0;
+}
+.section-title h2 {
+  padding-bottom: 34px;
+}
+
+/* header */
+.header {
+  padding: 20px 40px 8px 40px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+}
+.header img{
+  width: 175px;
+}
+.header nav {
+  padding: 60px 30px 40px 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000;
+  z-index: 20;
+  opacity: 1;
+  display: none;
+}
+
+.header a:hover {
+  color: #4bd
+}
+.header ul {
+  border-top: 1px solid #fff;
+}
+.header li {
+  padding: 20px 170px 20px 0;
+  border-bottom: 1px solid #fff;
+}
+.header a {
+  color: #fff;
+}
+.toggle-btn {
+  display: block;
+  /* positionでtopの設定以外を固定 */
+  position: fixed;
+  /* ここでメニューの位置調整 */
+  top: 25px;
+  right: 45px;
+  width: 30px;
+  height: 30px;
+  /* バツに変わる時のスピード？ */
+  transition: all .5s;
+  /* カーソルを指マークに変える */
+  cursor: pointer;
+  z-index: 20;
+}
+.toggle-btn span {
+  /* absoluteなら定位位置関係なし
+  relativeよりこっちの方がいい*/
+  position: absolute;
+  left: 0;
+  /* ここで線の横と盾を決定 */
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  transition: all .5s;
+}
+/* 以下の3つで線をずらした */
+.toggle-btn .nav-top {
+  top: 4px;
+}
+.toggle-btn .nav-mid {
+  top: 14px;
+}
+.toggle-btn .nav-bottom {
+  top: 24px;
+}
+.mask {
+  position: fixed;
+  top: 000;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  z-index: 10;
+  opacity: 0.7;
+  display: none;
+}
+/* よくわからんがここで✖️表示 */
+.open .toggle-btn span {
+  background-color: #fff;
+}
+/* 回転のアニメーション */
+/* 真ん中は邪魔なので消す */
+.open .toggle-btn .nav-top {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+  transform: translateY(10px) rotate(-315deg);
+}
+.open .toggle-btn .nav-mid {
+  opacity: 0;
+}
+.open .toggle-btn .nav-bottom {
+  -webkit-transform: translateY(-10px) rotate(315deg);
+  transform: translateY(-10px) rotate(315deg);
+}
+
+
+
+/* main */
+.main-img {
+  background-image: url(../img/main1.jpg);
+  /* 背景画面の高さを設定 */
+  min-height: 80vh;
+  /* 背景画面が一面に治るように設定 */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main-title{
+  position: relative;
+  top: 320px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* PICK UP */
+#pickup {
+  width: 100%;
+  padding: 100px 0 50px 0;
+  margin: 0 auto;
+
+}
+#pickup .slick {
+  font-size: 0;
+
+}
+#pickup .slick li {
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+/* FEATURE */
+#feature {
+  margin: 0px　auto;
+}
+#feature ul{
+  display: grid;
+  gap: 24px;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  padding: 0 20px;
+
+}
+#feature li {
+  box-shadow: 0 3px 8px 0 rgb(0,0,0,0.5);
+}
+#feature .feature-text {
+  padding: 0 30px;
+  text-align: left;
+  justify-content: flex-start;
+  font-size: 0.925rem;
+}
+#feature .feature-text p {
+  font-size: 0.7rem;
+  padding: 24px 0;
+}
+#feature .date {
+  text-align: right;
+}
+
+/* footer */
+footer {
+  background-color: #000e;
+  color: #fff;
+  margin-top: 60px;
+}
+#contact .attention {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+#contact ul {
+  display: flex;
+}
+#contact li {
+  line-height: 1.7;
+  font-size: 0.9rem;
+  width: 46%;
+  margin: 16px;
+  text-align: left;
+}
+#contact p {
+  padding: 0 20px 30px 0px;
+}
+#contact label {
+  display: block;
+}
+#contact input,textarea {
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid ;
+}
+#contact .button {
+  text-align: center;
+}
+#contact .button input {
+  width: 180px;
+  color: #fff;
+  background-color: #24292e;
+  padding: 15px 0;
+  border: solid 1px #24292e;
+}
+#contact .button input:hover {
+  border: 1px solid #24292e;
+  background-color: #fff;
+  color: #000;
+}
+.footer-text p{
+  padding: 10px 0;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 700px) {
+  .main-title{
+    font-size: 1.2rem;
+  }
+  #contact ul {
+    flex-direction: column;
+  }
+  #contact li  {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #contact input,textarea {
+    margin-top: 4px;
+    width: 100%;
+  }
+}
